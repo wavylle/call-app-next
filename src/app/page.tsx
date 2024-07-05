@@ -1,9 +1,12 @@
 import Link from "next/link"
-import getUsers from "@/_actions/userActions"
+import {getUsers, createUser} from "@/_actions/userActions"
 
 export default async function Home() {
   const getUsersData = await getUsers()
   console.log(getUsersData)
+
+  const createNewUser = await createUser()
+  console.log(createNewUser)
   return (
   <div className="p-10">
     Below are all the pages, click to visit: <br />

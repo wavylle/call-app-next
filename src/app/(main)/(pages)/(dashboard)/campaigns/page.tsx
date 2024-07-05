@@ -20,6 +20,7 @@ import {
   CardDescription,
   CardHeader,
   CardTitle,
+  CardFooter
 } from "@/components/ui/card"
 import {
   DropdownMenu,
@@ -34,9 +35,9 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import ComboboxDemo from "@/components/global/combobox";
 import DashboardSidebar from "@/components/global/panelsidebar";
-import AddCampaignDialog from "@/components/global/AddCampaignDialog";
 
 import type { Metadata } from "next";
+import NoCampaignsCreatedDiv from "@/components/global/nocampaigns"
 
 export const metadata: Metadata = {
     title: "Campaigns",
@@ -168,19 +169,42 @@ export default function Campaigns() {
                 </TabsTrigger>
               </TabsList>
         </Tabs>
-          <div
-            className="flex flex-1 items-center justify-center rounded-lg border border-dashed shadow-sm" x-chunk="dashboard-02-chunk-1"
-          >
-            <div className="flex flex-col items-center gap-1 text-center">
-              <h3 className="text-2xl font-bold tracking-tight">
-                You have no campaigns
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                Create a campaign to start making calls
-              </p>
-              <AddCampaignDialog trigger={<Button className="mt-4">Create Campaign</Button>} />
-            </div>
-          </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-4">
+      <Card>
+        <CardHeader>
+          <CardTitle>Card 1</CardTitle>
+        </CardHeader>
+        <CardContent className="flex items-center gap-2">
+          <span className="text-sm">4.5</span>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader>
+          <CardTitle>Card 2</CardTitle>
+        </CardHeader>
+        <CardContent className="flex items-center gap-2">
+          <span className="text-sm">3.7</span>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader>
+          <CardTitle>Card 3</CardTitle>
+        </CardHeader>
+        <CardContent className="flex items-center gap-2">
+          <span className="text-sm">4.2</span>
+        </CardContent>
+      </Card>
+      <Card>
+        <CardHeader>
+          <CardTitle>Card 4</CardTitle>
+        </CardHeader>
+        <CardContent className="flex items-center gap-2">
+          <span className="text-sm">5.0</span>
+        </CardContent>
+      </Card>
+    </div>
+
+          {/* <NoCampaignsCreatedDiv /> */}
         </main>
       </div>
   )
