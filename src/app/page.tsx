@@ -1,6 +1,9 @@
 import Link from "next/link"
+import getUsers from "@/_actions/userActions"
 
-export default function Home() {
+export default async function Home() {
+  const getUsersData = await getUsers()
+  console.log(getUsersData)
   return (
   <div className="p-10">
     Below are all the pages, click to visit: <br />
